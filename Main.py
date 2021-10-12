@@ -6,8 +6,10 @@ screen = pygame.display.set_mode((400, 400))
 game_over = False
 color = (255, 255, 255)
 color_snake = (0, 128, 0)
-x1 = 200
-y1 = 200
+screen_width = 400
+screen_height = 400
+x1 = screen_width / 2
+y1 = screen_height / 2
 x = 0
 y = 0
 clock = pygame.time.Clock()
@@ -32,6 +34,8 @@ while not game_over:
             elif event.key == pygame.K_RIGHT:
                 x = 10
                 y = 0
+    if x1 >= screen_width or x1 <0 or y1 >= screen_height or y1 <0:
+        game_over = True
 
 
     x1 += x
